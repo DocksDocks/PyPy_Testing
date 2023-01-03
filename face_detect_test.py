@@ -1,5 +1,8 @@
 import cv2
 import sys
+import time
+
+t1 = time.time()
 
 cascPath = sys.argv[1]
 faceCascade = cv2.CascadeClassifier(cascPath)
@@ -33,3 +36,7 @@ while True:
 # When everything is done, release the capture
 video_capture.release()
 cv2.destroyAllWindows()
+t2 = time.time()
+t = t2 - t1
+print("Elapsed time is : ", t, " seconds")
+
